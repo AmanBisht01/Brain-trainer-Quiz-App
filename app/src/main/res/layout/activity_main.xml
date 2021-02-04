@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="274dp"
+        android:background="@color/teal_200"
+        android:padding="60dp"
+        android:onClick="start"
+        android:id="@+id/start"
+        android:visibility="invisible"
+        android:text="GO"
+        android:textSize="60sp" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="@color/teal_200"
+            android:padding="5sp"
+            android:text="30 s"
+            android:textSize="50sp"
+
+            />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginStart="5dp"
+            android:padding="15dp"
+            android:text="20 + 20"
+            android:textSize="25sp" />
+
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/purple_500"
+            android:padding="5sp"
+            android:text="0/0"
+            android:textSize="50sp"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+      android:layout_below="@+id/linear"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid"
+        android:padding="10dp"
+    >
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="3"
+            android:id="@+id/ans0"
+            android:textSize="80sp"
+            android:background="@color/purple_200"
+            android:onClick="chooseAns"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:tag="0"
+
+
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="3"
+            android:id="@+id/ans1"
+            android:textSize="80sp"
+            android:background="#F4511E"
+            android:onClick="chooseAns"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:tag="1"
+
+
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="3"
+            android:id="@+id/ans2"
+            android:textSize="80sp"
+            android:background="#FDD835"
+            android:onClick="chooseAns"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:tag="2"
+
+
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:text="3"
+            android:id="@+id/ans3"
+            android:textSize="80sp"
+            android:background="#D81B60"
+            android:onClick="chooseAns"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:tag="4"
+            />
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grid"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/result"
+        android:text="Correct!"
+        android:textSize="60sp" />
+
+
+</RelativeLayout>

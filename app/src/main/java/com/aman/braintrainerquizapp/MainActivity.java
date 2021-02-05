@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 timer.setText("0s");
                 result.setText("Your Score is "+Integer.toString(score)+"/"+Integer.toString(numberOfQuestion));
                 playagain.setVisibility(View.VISIBLE);
+
             }
         }.start();
     }
@@ -67,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             }else {
                 incorrect=rand.nextInt(41);
                 while(incorrect==a+b) {
-
                     incorrect=rand.nextInt(41);
                 }
                 answers.add(incorrect);
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (view.getTag().toString().equals(Integer.toString(locateOfCorrentAns))){
             score++;
-            result.setText("Corrext!");
+            result.setText("Correct!");
         }else{
             result.setText("Wrong!");
         }

@@ -146,7 +146,7 @@
                 android:onClick="chooseAns"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:tag="4"
+                android:tag="3"
                 />
         </GridLayout>
 

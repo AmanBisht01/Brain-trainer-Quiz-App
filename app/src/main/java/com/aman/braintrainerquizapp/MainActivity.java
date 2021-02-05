@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     int numberOfQuestion=0;
     TextView points;
     TextView timer;
+    GridLayout grid;
     RelativeLayout game;
 
     public void playAgain(View view){
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         points.setText("0/0");
         result.setText("");
         playagain.setVisibility(View.INVISIBLE);
+        grid.setVisibility(View.VISIBLE);
         generateQuestion();
 
         new CountDownTimer(30100,1000){
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 timer.setText("0s");
+               grid.setVisibility(View.INVISIBLE);
+               question.setText("Well Done!");
                 result.setText("Your Score is "+Integer.toString(score)+"/"+Integer.toString(numberOfQuestion));
                 playagain.setVisibility(View.VISIBLE);
 
@@ -97,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         timer=findViewById(R.id.timerText);
         playagain=findViewById(R.id.playAgain);
         game=findViewById(R.id.gameRelativeLayout);
+        grid=findViewById(R.id.grid);
 
     }
 

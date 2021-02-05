@@ -17,141 +17,164 @@
         android:padding="60dp"
         android:onClick="start"
         android:id="@+id/start"
-        android:visibility="invisible"
+        android:visibility="visible"
+
         android:text="GO"
         android:textSize="60sp" />
 
-    <LinearLayout
-        android:id="@+id/linear"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:id="@+id/gameRelativeLayout"
+        android:visibility="invisible"
+        >
 
-        <TextView
-            android:id="@+id/timerText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:background="@color/teal_200"
-            android:padding="5sp"
-            android:text="30 s"
-            android:textSize="50sp"
 
-            />
+
+
+            <TextView
+                android:id="@+id/timerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:background="@color/teal_200"
+                android:padding="5sp"
+                android:layout_alignParentStart="true"
+                android:text="30 s"
+                android:textSize="30sp"
+
+                />
+
 
         <TextView
             android:id="@+id/question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_marginStart="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="15dp"
             android:padding="15dp"
             android:text="20 + 20"
-            android:textSize="25sp" />
-
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/scoreText"
+                android:id="@+id/scoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:layout_marginEnd="0dp"
+                android:background="@color/purple_500"
+                android:padding="5sp"
+            android:layout_alignParentEnd="true"
+                android:text="0/0"
+                android:textSize="30sp"
+
+                />
+
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/scoreText"
+            android:layout_height="wrap_content"
+            android:id="@+id/grid"
+            android:padding="10dp"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:text="3"
+                android:id="@+id/ans0"
+                android:textSize="80sp"
+                android:background="@color/purple_200"
+                android:onClick="chooseAns"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:tag="0"
+
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:text="3"
+                android:id="@+id/ans1"
+                android:textSize="80sp"
+                android:background="#F4511E"
+                android:onClick="chooseAns"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:tag="1"
+
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:text="3"
+                android:id="@+id/ans2"
+                android:textSize="80sp"
+                android:background="#FDD835"
+                android:onClick="chooseAns"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:tag="2"
+
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:text="3"
+                android:id="@+id/ans3"
+                android:textSize="80sp"
+                android:background="#D81B60"
+                android:onClick="chooseAns"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:tag="4"
+                />
+        </GridLayout>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10sp"
-            android:layout_marginEnd="0dp"
-            android:background="@color/purple_500"
-            android:padding="5sp"
-            android:text="0/0"
-            android:textSize="50sp"
+            android:layout_below="@+id/grid"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/result"
+            android:textSize="40sp" />
 
-            />
-
-
-    </LinearLayout>
-
-
-
-    <GridLayout
-        android:layout_width="match_parent"
-      android:layout_below="@+id/linear"
-        android:layout_height="wrap_content"
-        android:id="@+id/grid"
-        android:padding="10dp"
-    >
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:layout_width="wrap_content"
-            android:layout_gravity="fill"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:text="3"
-            android:id="@+id/ans0"
-            android:textSize="80sp"
-            android:background="@color/purple_200"
-            android:onClick="chooseAns"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:tag="0"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/playAgain"
+            android:text="Play Again"
+            android:visibility="invisible"
+            android:textSize="20sp"
+            android:onClick="playAgain"/>
 
 
-            />
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_gravity="fill"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_row="0"
-            android:text="3"
-            android:id="@+id/ans1"
-            android:textSize="80sp"
-            android:background="#F4511E"
-            android:onClick="chooseAns"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:tag="1"
 
+    </RelativeLayout>
 
-            />
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_gravity="fill"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_row="1"
-            android:text="3"
-            android:id="@+id/ans2"
-            android:textSize="80sp"
-            android:background="#FDD835"
-            android:onClick="chooseAns"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:tag="2"
-
-
-            />
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_gravity="fill"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_row="1"
-            android:text="3"
-            android:id="@+id/ans3"
-            android:textSize="80sp"
-            android:background="#D81B60"
-            android:onClick="chooseAns"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:tag="4"
-            />
-    </GridLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/grid"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        android:id="@+id/result"
-        android:text="Correct!"
-        android:textSize="60sp" />
 
 
 </RelativeLayout>
